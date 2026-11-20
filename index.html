@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Noor 💐</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ec;--bg2:#fff4e6;--card:rgba(255,255,255,.78);--ink:#4a2338;--soft:#8a5a70;--accent:#e0517f;--accent2:#f7a8c0;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1020;--bg2:#1c1428;--card:rgba(60,30,50,.75);--ink:#ffe8f0;--soft:#d9a9bd;--accent:#ff7aa2;--accent2:#7a3552;color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#2a1020;--bg2:#1c1428;--card:rgba(60,30,50,.75);--ink:#ffe8f0;--soft:#d9a9bd;--accent:#ff7aa2;--accent2:#7a3552;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:'Playfair Display',Georgia,serif;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2));overflow-x:hidden}
+#fl{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.fl{position:absolute;bottom:-60px;animation:up linear forwards;opacity:.9}
+@keyframes up{to{transform:translateY(-115vh) rotate(40deg)}}
+@media(prefers-reduced-motion:reduce){.fl{animation-duration:20s!important}}
+.stage{display:none;position:relative;z-index:2;min-height:100vh;padding:24px 16px;align-items:center;justify-content:center;flex-direction:column;text-align:center}
+.stage.on{display:flex}
+.card{background:var(--card);backdrop-filter:blur(8px);border-radius:24px;padding:28px 22px;width:100%;max-width:520px;box-shadow:0 10px 40px rgba(224,81,127,.2)}
+h1{font-size:2rem;margin:.2em 0;color:var(--accent)}
+h2{margin:.2em 0 .6em;color:var(--accent)}
+p{line-height:1.7;color:var(--ink)}
+.big{font-size:3rem}
+input{font:inherit;font-size:1.1rem;padding:12px 16px;border-radius:14px;border:2px solid var(--accent2);background:transparent;color:var(--ink);text-align:center;width:80%;margin:12px 0}
+input:focus{outline:none;border-color:var(--accent)}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:12px 26px;background:var(--accent);color:#fff;font-size:1rem;margin:6px}
+button.alt{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+.shake{animation:sh .4s}
+@keyframes sh{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+.err{color:var(--accent);min-height:1.4em;font-size:.95rem}
+.tabs{margin-bottom:12px}
+#duas{max-width:560px;width:100%}
+.dua{background:var(--card);border-radius:20px;padding:18px;margin:14px 0;box-shadow:0 6px 24px rgba(224,81,127,.15)}
+.ar{font-family:'Amiri','Traditional Arabic',serif;font-size:1.7rem;line-height:2.1;direction:rtl;color:var(--ink)}
+.tr{font-style:italic;color:var(--soft);font-size:.95rem}
+.mn{font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:340px;margin:12px auto}
+.tile{aspect-ratio:1;border-radius:14px;background:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:1.8rem;cursor:pointer;user-select:none}
+.tile.open,.tile.done{background:var(--card);border:2px solid var(--accent)}
+.tile.done{opacity:.6}
+#box{position:relative;height:260px;border-radius:18px;background:var(--card);border:2px dashed var(--accent2);overflow:hidden;margin:12px 0;touch-action:manipulation}
+.t{position:absolute;font-size:2.2rem;cursor:pointer;user-select:none}
+.sm{color:var(--soft);font-size:.9rem}
+</style>
+</head>
+<body>
+<div id="fl"></div>
+
+<section class="stage on" id="lock">
+  <div class="card">
+    <div class="big">🔒</div>
+    <h1>Noor, this is for you</h1>
+    <p>A little surprise is waiting inside. Enter the secret date to open it 💗</p>
+    <input id="pw" type="text" placeholder="Type the date…" autocomplete="off" aria-label="Password">
+    <div class="err" id="err"></div>
+    <button id="go">Unlock</button>
+  </div>
+</section>
+
+<section class="stage" id="msg">
+  <div class="card">
+    <div class="big">💐</div>
+    <h1>Get Well Soon, Noor!</h1>
+    <p>You mean the world to me, and seeing you unwell makes my heart heavy. I wish I could take your pain away.</p>
+    <p>Rest, drink lots of water, smile a little, and let yourself heal. You are strong, you are loved, and brighter days are coming, in shā’ Allāh.</p>
+    <p>Until you are back to your cheerful self, these flowers and prayers are my hug to you. 🌸</p>
+    <p class="sm">With all my love, your best friend 🤍</p>
+    <button id="toDuas">Duas &amp; Prayers for you 🤲</button>
+  </div>
+</section>
+
+<section class="stage" id="main" style="justify-content:flex-start">
+  <div class="tabs">
+    <button id="tD">🤲 Duas</button>
+    <button id="tG" class="alt">🎮 Games</button>
+  </div>
+
+  <div id="duas">
+    <h2>Duas for Noor’s Shifa</h2>
+    <div class="dua"><div class="ar">اللَّهُمَّ رَبَّ النَّاسِ، أَذْهِبِ الْبَأْسَ، اشْفِهَا وَأَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا</div>
+      <p class="tr">Allāhumma Rabban-nās, adh-hibil-ba’s, ishfihā wa Antash-Shāfī, lā shifā’a illā shifā’uk, shifā’an lā yughādiru saqamā</p>
+      <p class="mn">O Allah, Lord of mankind, remove the harm and cure her. You are the Healer; there is no cure except Your cure, a cure that leaves no illness behind.</p></div>
+    <div class="dua"><div class="ar">أَسْأَلُ اللَّهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكِ</div>
+      <p class="tr">As’alullāhal-‘Azīm, Rabbal-‘arshil-‘azīm, an yashfiyaki (say 7 times)</p>
+      <p class="mn">I ask Allah the Mighty, Lord of the Mighty Throne, to cure you.</p></div>
+    <div class="dua"><div class="ar">وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ</div>
+      <p class="tr">Wa idhā maridtu fa-huwa yashfīn (Qur’an 26:80)</p>
+      <p class="mn">And when I am ill, it is He who cures me.</p></div>
+    <div class="dua"><div class="ar">أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ</div>
+      <p class="tr">Annī massaniyad-durru wa Anta arhamur-rāhimīn (Qur’an 21:83)</p>
+      <p class="mn">Indeed, hardship has touched me, and You are the Most Merciful of the merciful.</p></div>
+    <div class="dua"><div class="ar">لَا بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ</div>
+      <p class="tr">Lā ba’sa tahūrun in shā’ Allāh</p>
+      <p class="mn">No harm, it is a purification, if Allah wills.</p></div>
+    <div class="dua"><div class="ar">حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</div>
+      <p class="tr">Hasbiyallāhu lā ilāha illā Huwa, ‘alayhi tawakkaltu wa Huwa Rabbul-‘arshil-‘azīm</p>
+      <p class="mn">Allah is enough for me; there is no god but Him. In Him I place my trust.</p></div>
+    <p class="sm">Ameen. May Allah grant you complete health, strength and peace. 🤍</p>
+  </div>
+
+  <div id="games" style="display:none;max-width:560px;width:100%">
+    <div class="card">
+      <h2>🌷 Flower Match</h2>
+      <p class="sm">Find all the pairs. Moves: <b id="mv">0</b></p>
+      <div class="grid" id="grid"></div>
+      <div class="err" id="win"></div>
+      <button class="alt" id="reset">Shuffle again</button>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h2>🌸 Catch the Flowers</h2>
+      <p class="sm">Tap as many flowers as you can in 20 seconds. Score: <b id="sc">0</b> · Time: <b id="tm">20</b></p>
+      <div id="box"></div>
+      <button id="start">Start</button>
+    </div>
+  </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
